@@ -29,6 +29,12 @@
             timeout-ms = <60>;
             require-prior-idle-ms = <1>;
         };
+        Opt {
+            bindings = <&kp LALT>;
+            key-positions = <1 2 3>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     keymap {
@@ -38,23 +44,23 @@
 &trans  &kp Q  &kp W  &kp E      &kp R  &kp T       &kp Y      &kp U  &kp I     &kp O    &kp P          &trans
 &trans  &kp A  &kp S  &kp D      &kp F  &kp G       &kp H      &kp J  &kp K     &kp L    &kp QUESTION   &trans
 &trans  &kp Z  &kp X  &kp C      &kp V  &kp B       &kp N      &kp M  &kp APOS  &kp DOT  &kp BACKSPACE  &trans
-                       &sk LSHFT  &mo 1  &kp LCTL    &kp SPACE  &mo 2  &kp BSPC
+                       &sk LSHFT  &mo 1  &kp LCTL    &kp SPACE  &mo 2  &kp LGUI
             >;
         };
         upper_layer {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &kp N0  &trans    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT         &trans  &trans
-&trans  &kp N4  &kp N5  &kp N6  &trans  &trans    &kp ESC    &kp DQT    &kp GRAVE  &kp LS(NUMBER_3) &kp AT  &trans
-&trans  &kp N1  &kp N2  &kp N3  &trans  &trans    &kp BSLH   &kp PIPE   &kp TILDE  &kp NON_US_HASH  &trans  &trans
+&trans  &kp N7  &kp N8  &kp N9  &kp N0  &trans    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT         &kp TAB  &trans
+&trans  &kp N4  &kp N5  &kp N6  &trans  &trans    &kp ESC    &kp DQT    &kp GRAVE         &kp LS(NUMBER_3) &kp AT   &trans
+&trans  &kp N1  &kp N2  &kp N3  &trans  &trans    &kp BSLH   &kp PIPE   &kp TILDE         &kp NON_US_HASH  &trans   &trans
                          &trans  &mo 1  &trans    &trans     &mo 2      &trans
             >;
         };
         lower_layer {
             bindings = <
-&trans  &kp BANG   &kp AT    &kp HASH  &kp DLLR  &kp PRCT    &kp CARET  &kp AMPS      &kp ASTRK  &kp LPAR  &kp RPAR   &trans
-&trans  &kp HASH   &kp QMARK &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp EQUAL     &kp LBRC   &kp RBRC  &kp BSPC   &trans
-&trans  &kp LSHFT  &kp PLUS  &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN   &kp UP    &kp RIGHT  &trans
-                              &kp RSFT  &mo 1     &kp LCTL    &kp SPACE  &mo 2         &kp RSFT
+&trans  &kp BANG   &kp AT    &kp HASH  &kp DLLR  &kp PRCT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
+&trans  &kp HASH   &kp QMARK &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC  &kp BSPC   &trans
+&trans  &kp LSHFT  &kp PLUS  &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
+                              &kp RSFT  &mo 1     &kp LCTL    &kp SPACE  &mo 2      &kp RSFT
             >;
         };
     };
