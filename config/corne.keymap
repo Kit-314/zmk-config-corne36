@@ -12,12 +12,14 @@
             bindings = <&kp COMMA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             key-position = <33>;
+            layers = <0>;
         };
         
         question_bracket: question_bracket {
             bindings = <&kp LPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             key-position = <22>;
+            layers = <0>;
         };
     };
 
