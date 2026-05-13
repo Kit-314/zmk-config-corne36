@@ -19,12 +19,6 @@
 
     combos {
         compatible = "zmk,combos";
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <18 19 20>;
-            timeout-ms = <60>;
-            require-prior-idle-ms = <1>;
-        };
         BtClr {
             bindings = <&bt BT_CLR>;
             key-positions = <1 2 3 4 5>;
@@ -62,16 +56,16 @@
         default_layer {
             bindings = <
 &trans  &kp Q  &kp W  &kp E       &kp R  &kp T       &kp Y      &kp U  &kp I     &kp O    &kp P          &trans
-&trans  &kp A  &kp S  &kp D       &kp F  &kp G       &kp H      &kp J  &kp K     &kp L    &kp LALT       &trans
+&trans  &kp A  &kp S  &kp D       &kp F  &kp G       &kp H      &kp J  &kp K     &kp L    &kp ENTER      &trans
 &trans  &kp Z  &kp X  &kp C       &kp V  &kp B       &kp N      &kp M  &kp APOS  &kp DOT  &kp BACKSPACE  &trans
                        &kp LCTL    &mo 1  &kp LSHFT   &kp SPACE  &mo 2  &kp LGUI
             >;
         };
         upper_layer {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &kp N0  &kp PG_UP    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT         &kp TAB  &trans
-&trans  &kp N4  &kp N5  &kp N6  &trans  &kp PG_DN    &kp ESC    &kp DQT    &kp GRAVE         &kp LS(NUMBER_3) &kp AT   &trans
-&trans  &kp N1  &kp N2  &kp N3  &trans  &kp F11      &kp BSLH   &kp PIPE   &kp TILDE         &kp NON_US_HASH  &trans   &trans
+&trans  &kp N7  &kp N8  &kp N9  &kp N0  &kp PG_UP    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT         &kp TAB   &trans
+&trans  &kp N4  &kp N5  &kp N6  &trans  &kp PG_DN    &kp ESC    &kp DQT    &kp GRAVE         &kp LS(NUMBER_3) &kp AT    &trans
+&trans  &kp N1  &kp N2  &kp N3  &trans  &kp F11      &kp BSLH   &kp PIPE   &kp TILDE         &kp NON_US_HASH  &kp LALT  &trans
                          &trans  &mo 1  &trans       &trans     &mo 2      &trans
             >;
         };
