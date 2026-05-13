@@ -3,8 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-&mt { tapping_term_ms = <200>; };
-
 / {
     key_overrides {
         compatible = "zmk,key-overrides";
