@@ -77,10 +77,10 @@
         };
         lower_layer {
             bindings = <
-&trans           &kp BANG   &kp AT    &kp HASH  &kp DLLR        &kp PRCT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
-&trans           &kp COLN   &kp QMARK &kp FSLH  &kp SCLN        &kp UNDER   &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC  &kp BSPC   &trans
-&trans           &kp LSHFT  &kp PLUS  &kp LBKT  &kp RBKT        &kp BSLH    &kp UNDER  &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-                                       &rgb_ug RGB_TOG  &mo 1   &rgb_ug RGB_COLOR_HSB(0,0,100)    &kp SPACE  &mo 2      &kp RSFT
+&trans  &kp BANG   &kp AT    &kp HASH  &kp DLLR                        &kp PRCT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
+&trans  &kp COLN   &kp QMARK &kp FSLH  &kp SCLN                        &kp UNDER   &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC  &kp BSPC   &trans
+&trans  &kp LSHFT  &kp PLUS  &kp LBKT  &rgb_ug RGB_COLOR_HSB(0,0,40)   &rgb_ug RGB_COLOR_HSB(149,100,40)    &kp UNDER  &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
+                              &rgb_ug RGB_TOG  &mo 1  &kp LCTL    &kp SPACE  &mo 2      &kp RSFT
             >;
         };
     };
