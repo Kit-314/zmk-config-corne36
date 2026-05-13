@@ -4,14 +4,12 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    key_overrides {
-        compatible = "zmk,key-overrides";
-        
+    behaviors {
         dot_comma: dot_comma {
-            bindings = <&kp COMMA>;
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COMMA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            key-position = <33>;
-            layers = <0>;
         };
     };
 
@@ -55,7 +53,7 @@
             bindings = <
 &trans  &kp Q  &kp W  &kp E       &kp R  &kp T       &kp Y      &kp U  &kp I     &kp O    &kp P          &trans
 &trans  &kp A  &kp S  &kp D       &kp F  &kp G       &kp H      &kp J  &kp K     &kp L    &kp ENTER      &trans
-&trans  &kp Z  &kp X  &kp C       &kp V  &kp B       &kp N      &kp M  &kp APOS  &kp DOT  &kp BACKSPACE  &trans
+&trans  &kp Z  &kp X  &kp C       &kp V  &kp B       &kp N      &kp M  &kp APOS  &dot_comma  &kp BACKSPACE  &trans
                        &kp LCTL    &mo 1  &kp LSHFT   &kp SPACE  &mo 2  &kp LGUI
             >;
         };
