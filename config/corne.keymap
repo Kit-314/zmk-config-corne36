@@ -47,13 +47,16 @@
             layers = <2>;
         };
         ExtPowerToggle {
-            /* Outer thumbs (LCTL + LGUI) on any layer — diagnostic for
-             * displays going black: the OLED VCC is on the EXT_POWER rail,
-             * and something is cutting it after a few seconds. This combo
-             * toggles EXT_POWER back on. */
+            /* 4-key combo on layer 2 only: hold MO(2), then press the four
+             * inner home-row keys on the right half (H + J + K + L).
+             * Toggles EXT_POWER, which controls the OLED + LED power rail.
+             * Moved to a layer-2 4-key combo because Ctrl+Cmd is a common
+             * Mac shortcut and an outer-thumb 2-key combo would fire by
+             * accident every time you used those shortcuts. */
             bindings = <&ext_power EP_TOG>;
-            key-positions = <36 41>;
+            key-positions = <18 19 20 21>;
             timeout-ms = <100>;
+            layers = <2>;
         };
     };
 
