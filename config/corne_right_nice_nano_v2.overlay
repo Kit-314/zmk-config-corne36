@@ -1,3 +1,0 @@
-&led_strip {
-    chain-length = <24>; /* 18 per-key SK6812 MINI-E + 6 underglow SK6812 MINI */
-};
