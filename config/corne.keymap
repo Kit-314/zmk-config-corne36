@@ -80,5 +80,5 @@
 // overlay applied) because ZMK's cmake processes user config overlays BEFORE
 // the shield board overlay that defines the led_strip node.
 &led_strip {
-    chain-length = <24>; /* 18 per-key SK6812 MINI-E + 6 underglow SK6812 MINI per half */
+    chain-length = <18>; /* 18 per-key SK6812 MINI-E only — underglow positions 18-23 unpowered */
 };
