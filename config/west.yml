@@ -11,6 +11,10 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled
       remote: mctechnology17
-      revision: main
+      # Pinned to a known commit instead of main. Tracking main means every
+      # build pulled latest upstream changes — possible cause of subtle
+      # regressions (the asymmetric central LED issue, the toggle keypath
+      # not firing) that didn't exist when the user's keyboard worked.
+      revision: 46f824abb29c50f00f4dd29f47b81586bba89dca
   self:
     path: config
