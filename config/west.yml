@@ -15,6 +15,6 @@ manifest:
       # build pulled latest upstream changes — possible cause of subtle
       # regressions (the asymmetric central LED issue, the toggle keypath
       # not firing) that didn't exist when the user's keyboard worked.
-      revision: 46f824abb29c50f00f4dd29f47b81586bba89dca
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
   self:
     path: config
