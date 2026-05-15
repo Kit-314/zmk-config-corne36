@@ -46,18 +46,11 @@
             timeout-ms = <60>;
             layers = <2>;
         };
-        ExtPowerToggle {
-            /* 4-key combo on layer 2 only: hold MO(2), then press the four
-             * inner home-row keys on the right half (H + J + K + L).
-             * Toggles EXT_POWER, which controls the OLED + LED power rail.
-             * Moved to a layer-2 4-key combo because Ctrl+Cmd is a common
-             * Mac shortcut and an outer-thumb 2-key combo would fire by
-             * accident every time you used those shortcuts. */
-            bindings = <&ext_power EP_TOG>;
-            key-positions = <18 19 20 21>;
-            timeout-ms = <100>;
-            layers = <2>;
-        };
+        /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
+         * on this PCB, so the only sane state is "always on". Combined with
+         * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
+         * the firmware can disable EXT_POWER any more — it can't get stuck
+         * off and brick the keyboard. */
     };
 
     keymap {
