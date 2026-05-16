@@ -50,21 +50,21 @@
             /* Outermost three keys on top row of right half: I, O, P */
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9 10>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             layers = <0>;
         };
         VolDn {
             /* Outermost three keys on middle row of right half: K, L, BSPC */
             bindings = <&kp C_VOL_DN>;
             key-positions = <20 21 22>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             layers = <0>;
         };
         MissionControl {
             /* N + M + ' on right half bottom row → Ctrl+Up (macOS Mission Control) */
             bindings = <&kp LC(UP)>;
             key-positions = <30 31 32>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             layers = <0>;
         };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
