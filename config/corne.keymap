@@ -60,6 +60,13 @@
             timeout-ms = <50>;
             layers = <0>;
         };
+        MissionControl {
+            /* E + R + T on left half top row → Ctrl+Up (macOS Mission Control) */
+            bindings = <&kp LC(UP)>;
+            key-positions = <3 4 5>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
          * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
