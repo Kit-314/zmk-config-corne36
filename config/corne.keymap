@@ -61,9 +61,9 @@
             layers = <0>;
         };
         MissionControl {
-            /* E + R + T on left half top row → Ctrl+Up (macOS Mission Control) */
+            /* N + M + ' on right half bottom row → Ctrl+Up (macOS Mission Control) */
             bindings = <&kp LC(UP)>;
-            key-positions = <3 4 5>;
+            key-positions = <30 31 32>;
             timeout-ms = <50>;
             layers = <0>;
         };
