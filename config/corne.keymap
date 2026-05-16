@@ -46,6 +46,20 @@
             timeout-ms = <60>;
             layers = <2>;
         };
+        VolUp {
+            /* Outermost three keys on top row of right half: I, O, P */
+            bindings = <&kp C_VOL_UP>;
+            key-positions = <8 9 10>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+        VolDn {
+            /* Outermost three keys on middle row of right half: K, L, BSPC */
+            bindings = <&kp C_VOL_DN>;
+            key-positions = <20 21 22>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
          * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
