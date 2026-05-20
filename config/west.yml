@@ -7,7 +7,14 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      # Pinned to the last commit before ZMK adopted Zephyr 4.1 + LVGL 9.3
+      # (Zephyr 4.1 landed at c06fa48c, 2025-12-09). zmk-nice-oled hasn't
+      # been updated for LVGL 9.3 yet (see issue #22 on mctechnology17/
+      # zmk-nice-oled), so going past this point breaks the displays. This
+      # commit (abb64ba, 2025-12-07) gives us 11 months of post-v0.3
+      # improvements including full mouse emulation (CONFIG_ZMK_POINTING
+      # + &mkp/&mmv/&msc) while staying on LVGL 8.x.
+      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
       import: app/west.yml
     - name: zmk-nice-oled
       remote: mctechnology17
