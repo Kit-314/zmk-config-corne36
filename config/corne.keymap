@@ -16,12 +16,12 @@
     };
 
     macros {
-        /* Mouse layer entry: set LED colour to red AND toggle layer 3 on.
-         * Red is the visual indicator that mouse mode is active. */
+        /* Mouse layer entry: set LED colour to green AND toggle layer 3 on.
+         * Green is the visual indicator that mouse mode is active. */
         mouse_enter: mouse_enter {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,20)>, <&tog 3>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(120,100,20)>, <&tog 3>;
         };
         /* Mouse layer exit: restore default white LED colour AND toggle
          * layer 3 off. Loses any custom colour you'd previously set
