@@ -15,6 +15,25 @@
         };
     };
 
+    macros {
+        /* Mouse layer entry: set LED colour to red AND toggle layer 3 on.
+         * Red is the visual indicator that mouse mode is active. */
+        mouse_enter: mouse_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,20)>, <&tog 3>;
+        };
+        /* Mouse layer exit: restore default white LED colour AND toggle
+         * layer 3 off. Loses any custom colour you'd previously set
+         * (e.g. blue preset) — re-press the colour preset key after exit
+         * if you want that back. */
+        mouse_exit: mouse_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,20)>, <&tog 3>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         BtClr {
@@ -68,16 +87,24 @@
             timeout-ms = <100>;
             layers = <0>;
         };
-        MouseToggle {
-            /* D + F + G on left half home row → toggle mouse layer (3).
-             * Active on both layer 0 (to enter) and layer 3 (to exit).
-             * Note: D/F/G on layer 3 are MOVE_LEFT/MOVE_DOWN/MOVE_RIGHT,
-             * so pressing them all together within 100ms fires the combo
-             * (toggles layer off) rather than the three movement bindings. */
-            bindings = <&tog 3>;
+        MouseEnter {
+            /* D + F + G on left half home row, when on layer 0 →
+             * enter mouse layer + change LED colour to red. */
+            bindings = <&mouse_enter>;
             key-positions = <15 16 17>;
             timeout-ms = <100>;
-            layers = <0 3>;
+            layers = <0>;
+        };
+        MouseExit {
+            /* D + F + G on left half home row, when on layer 3 →
+             * exit mouse layer + restore default LED colour.
+             * Note: D/F/G on layer 3 are MOVE_LEFT/MOVE_DOWN/MOVE_RIGHT,
+             * so pressing them all together within 100ms fires this combo
+             * (exits the layer) rather than the three movement bindings. */
+            bindings = <&mouse_exit>;
+            key-positions = <15 16 17>;
+            timeout-ms = <100>;
+            layers = <3>;
         };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
