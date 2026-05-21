@@ -79,16 +79,6 @@
             timeout-ms = <100>;
             layers = <0 3>;
         };
-        MouseHold {
-            /* J + K on right half home row → momentary mouse layer (3).
-             * While held, layer 3 is active; release exits back to default.
-             * Right-hand hold leaves left hand free for cursor R/D/F/G.
-             * Only active on layer 0 — the sticky toggle handles re-entry. */
-            bindings = <&mo 3>;
-            key-positions = <19 20>;
-            timeout-ms = <100>;
-            layers = <0>;
-        };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
          * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
