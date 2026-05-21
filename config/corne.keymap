@@ -157,11 +157,17 @@
             /* Layer 6 — held via I on mouse layer.
              * Overrides R/D/F/G with scroll directions instead of movement.
              * Highest-numbered of the mouse modifier layers, so it wins if
-             * combined with fast/slow (scroll always plays at normal speed). */
+             * combined with fast/slow (scroll always plays at normal speed).
+             *
+             * Up/down are inverted vs. movement because macOS "natural
+             * scrolling" treats content motion as the primary direction:
+             * R (up arrow) → SCRL_DOWN sends content upward (user perceives
+             * as scrolling up); F (down arrow) → SCRL_UP sends content
+             * downward (user perceives as scrolling down). */
             label = "SCROLL";
             bindings = <
-&trans  &trans  &trans  &trans  &msc SCRL_UP    &trans          &trans          &trans          &trans          &trans          &trans          &trans
-&trans  &trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &msc SCRL_DOWN  &trans          &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_RIGHT  &trans          &trans          &trans          &trans          &trans          &trans
 &trans  &trans  &trans  &trans  &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
             >;
