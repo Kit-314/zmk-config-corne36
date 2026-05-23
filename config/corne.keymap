@@ -113,6 +113,33 @@
             timeout-ms = <100>;
             layers = <3>;
         };
+        /* Homerow (macOS keyboard-navigation app) triggers. Each fires a
+         * reserved F-key that nothing else on the system uses, so they can
+         * never collide with normal typing or future keymapping. Homerow's
+         * own shortcuts are set to F13/F14/F15 in its settings.
+         * 3-key combos (like the other base-layer combos) so they don't
+         * misfire mid-word. Left hand: right-hand triples are already taken. */
+        HomerowHints {
+            /* Q + W + E (top-left) → F13 = Homerow click-hints (heavy use) */
+            bindings = <&kp F13>;
+            key-positions = <1 2 3>;
+            timeout-ms = <100>;
+            layers = <0>;
+        };
+        HomerowScroll {
+            /* A + S + D (home-left) → F14 = Homerow scroll */
+            bindings = <&kp F14>;
+            key-positions = <13 14 15>;
+            timeout-ms = <100>;
+            layers = <0>;
+        };
+        HomerowSearch {
+            /* Z + X + C (bottom-left) → F15 = Homerow search-by-label */
+            bindings = <&kp F15>;
+            key-positions = <25 26 27>;
+            timeout-ms = <100>;
+            layers = <0>;
+        };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
          * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
