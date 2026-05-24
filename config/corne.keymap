@@ -116,7 +116,11 @@
         /* Homerow (macOS keyboard-navigation app) triggers. Each fires a
          * reserved F-key that nothing else on the system uses, so they can
          * never collide with normal typing or future keymapping. Homerow's
-         * own shortcuts are set to F13/F14/F15 in its settings.
+         * own shortcuts are set to match in its settings.
+         * NOTE: do NOT use F14/F15 — macOS intercepts them as brightness
+         * down/up keys, so apps never see them. F13 and F16+ pass through.
+         * Only two triggers needed: Homerow's "search" isn't a separate
+         * shortcut, it's typing the label inside the F13 click overlay.
          * 3-key combos (like the other base-layer combos) so they don't
          * misfire mid-word. Left hand: right-hand triples are already taken. */
         HomerowHints {
@@ -127,16 +131,10 @@
             layers = <0>;
         };
         HomerowScroll {
-            /* A + S + D (home-left) → F14 = Homerow scroll */
-            bindings = <&kp F14>;
+            /* A + S + D (home-left) → F16 = Homerow scroll.
+             * F16 (not F14): macOS eats F14 as a brightness key. */
+            bindings = <&kp F16>;
             key-positions = <13 14 15>;
-            timeout-ms = <100>;
-            layers = <0>;
-        };
-        HomerowSearch {
-            /* Z + X + C (bottom-left) → F15 = Homerow search-by-label */
-            bindings = <&kp F15>;
-            key-positions = <25 26 27>;
             timeout-ms = <100>;
             layers = <0>;
         };
