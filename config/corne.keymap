@@ -113,27 +113,30 @@
             timeout-ms = <100>;
             layers = <3>;
         };
-        /* Homerow (macOS keyboard-navigation app) triggers. Each fires a
-         * reserved F-key that nothing else on the system uses, so they can
-         * never collide with normal typing or future keymapping. Homerow's
-         * own shortcuts are set to match in its settings.
-         * NOTE: do NOT use F14/F15 — macOS intercepts them as brightness
-         * down/up keys, so apps never see them. F13 and F16+ pass through.
-         * Only two triggers needed: Homerow's "search" isn't a separate
-         * shortcut, it's typing the label inside the F13 click overlay.
+        /* Scroll combos on the base layer — scroll without entering the
+         * mouse layer. The scroll layer (layer 6, reached via I on the
+         * mouse layer) is still in place for horizontal scroll and as a
+         * fallback for when you're already in mouse mode.
+         * These repurpose two combos that became vestigial after the
+         * Mouseless pivot: Q+W+E was Homerow click-hints (F13), A+S+D was
+         * Homerow scroll (F16). Mouseless activates via LeftCmd-tap natively,
+         * so the F-key combos had nothing listening for them.
+         * NOTE on direction with macOS natural scrolling enabled: to scroll
+         * UP (perceived), emit SCRL_DOWN (sends content upward); to scroll
+         * DOWN (perceived), emit SCRL_UP. The combo names below describe
+         * user-perceived direction; the binding emits the inverted keycode.
          * 3-key combos (like the other base-layer combos) so they don't
          * misfire mid-word. Left hand: right-hand triples are already taken. */
-        HomerowHints {
-            /* Q + W + E (top-left) → F13 = Homerow click-hints (heavy use) */
-            bindings = <&kp F13>;
+        ScrollUp {
+            /* Q + W + E (top-left) → scroll UP (top row = up direction). */
+            bindings = <&msc SCRL_DOWN>;
             key-positions = <1 2 3>;
             timeout-ms = <100>;
             layers = <0>;
         };
-        HomerowScroll {
-            /* A + S + D (home-left) → F16 = Homerow scroll.
-             * F16 (not F14): macOS eats F14 as a brightness key. */
-            bindings = <&kp F16>;
+        ScrollDown {
+            /* A + S + D (home-left) → scroll DOWN. */
+            bindings = <&msc SCRL_UP>;
             key-positions = <13 14 15>;
             timeout-ms = <100>;
             layers = <0>;
