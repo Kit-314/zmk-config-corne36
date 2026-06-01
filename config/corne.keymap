@@ -141,6 +141,21 @@
             timeout-ms = <100>;
             layers = <0>;
         };
+        /* Mouseless "toggle continuous mode" trigger. F17 = reserved private
+         * namespace (no physical Mac F17, no default macOS binding) — emitted
+         * only by this combo. Bind F17 in Mouseless's config editor to
+         * "Toggle continuous mode until closed".
+         * Usage: tap LeftCmd to open overlay, press Z+X+C to enter sticky
+         * mode, click through things, Esc to dismiss (auto-disables sticky).
+         * Z+X+C completes the left-hand row pattern: top=scroll up,
+         * home=scroll down, bottom=sticky. */
+        MouselessSticky {
+            /* Z + X + C (bottom-left) → F17 = Mouseless continuous-mode toggle */
+            bindings = <&kp F17>;
+            key-positions = <25 26 27>;
+            timeout-ms = <100>;
+            layers = <0>;
+        };
         /* No EP_TOG combo. EXT_POWER powers both the displays and the LEDs
          * on this PCB, so the only sane state is "always on". Combined with
          * CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n in corne.conf, nothing in
