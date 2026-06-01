@@ -177,6 +177,9 @@
         mouse_layer {
             /* Layer 3 — entered/exited via D+F+G combo (sticky toggle).
              * Movement: R(up), D(left), F(down), G(right). Combine two for diagonals.
+             * Default velocity 1400 (set explicitly per-binding; the bare
+             * MOVE_UP/etc. macros use ZMK's 600 default from pointing.h,
+             * which is a #define and not Kconfig-overridable).
              * Clicks: Y = left click, U = right click.
              * Scroll modifier: hold I → layer 6 (R/D/F/G become scroll directions).
              * Speed modifiers: hold inner-right thumb → fast (layer 4),
@@ -184,8 +187,8 @@
              * Everything else &trans so you can still type/modify mid-mouse. */
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &mmv MOVE_UP    &trans          &mkp LCLK       &mkp RCLK       &mo 6           &trans          &trans          &trans
-&trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &mmv MOVE(0,-1400)    &trans          &mkp LCLK       &mkp RCLK       &mo 6           &trans          &trans          &trans
+&trans  &trans  &trans  &mmv MOVE(-1400,0)  &mmv MOVE(0,1400)  &mmv MOVE(1400,0)  &trans          &trans          &trans          &trans          &trans          &trans
 &trans  &trans  &trans  &trans  &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
                         &trans  &trans  &trans          &mo 4   &mo 5   &trans
             >;
