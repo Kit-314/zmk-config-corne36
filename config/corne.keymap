@@ -13,6 +13,12 @@
             bindings = <&kp DOT>, <&kp COMMA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        gt_lt: gt_lt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GT>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -177,7 +183,7 @@
         upper_layer {
             label = "UPPER";
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &kp N0  &kp PG_UP    &mt LSHFT LT  &kp PRCNT     &kp LBKT         &kp RBKT         &kp TAB   &trans
+&trans  &kp N7  &kp N8  &kp N9  &kp N0  &kp PG_UP    &gt_lt     &kp PRCNT     &kp LBKT         &kp RBKT         &kp TAB   &trans
 &trans  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp PG_DN    &kp ESC    &kp DQT    &kp GRAVE         &kp LS(NUMBER_3) &kp AT    &trans
 &trans  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp F11      &kp BSLH   &kp PIPE   &kp TILDE         &kp NON_US_HASH  &kp LALT  &trans
                          &trans  &mo 1  &trans       &trans     &mo 2      &trans
