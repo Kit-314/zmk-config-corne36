@@ -72,6 +72,20 @@
             timeout-ms = <60>;
             layers = <2>;
         };
+        Copy {
+            /* Y + U + I on right half top row → Cmd+C (copy), layer 2 only */
+            bindings = <&kp LG(C)>;
+            key-positions = <6 7 8>;
+            timeout-ms = <60>;
+            layers = <2>;
+        };
+        Paste {
+            /* H + J + K on right half home row → Cmd+V (paste), layer 2 only */
+            bindings = <&kp LG(V)>;
+            key-positions = <18 19 20>;
+            timeout-ms = <60>;
+            layers = <2>;
+        };
         VolUp {
             /* Outermost three keys on top row of right half: I, O, P */
             bindings = <&kp C_VOL_UP>;
