@@ -207,8 +207,8 @@
             label = "LOWER";
             bindings = <
 &trans  &kp BANG   &kp AT    &kp HASH  &kp DLLR                        &kp PRCT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &trans
-&trans  &kp COLN   &kp QMARK &kp FSLH  &kp SCLN                        &kp UNDER   &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC  &kp BSPC   &trans
-&trans  &kp LSHFT  &kp PLUS  &kp LBKT  &rgb_ug RGB_COLOR_HSB(0,0,15)   &rgb_ug RGB_COLOR_HSB(170,100,15)    &kp UNDER  &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
+&trans  &kp COLN   &kp QMARK &kp FSLH  &kp SCLN                        &kp UNDER   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &kp BSPC   &trans
+&trans  &kp LSHFT  &kp PLUS  &kp LBKT  &rgb_ug RGB_COLOR_HSB(0,0,15)   &rgb_ug RGB_COLOR_HSB(170,100,15)    &kp UNDER  &kp MINUS  &kp EQUAL  &kp LBRC  &kp RBRC  &trans
                               &rgb_ug RGB_TOG  &mo 1  &kp LCTL    &kp SPACE  &mo 2      &kp RSFT
             >;
         };
