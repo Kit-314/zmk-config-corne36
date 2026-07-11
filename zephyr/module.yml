@@ -1,0 +1,5 @@
+# Registers this repo as a Zephyr module so the ZMK build picks up the custom
+# firmware sources via the root CMakeLists.txt (the build-user-config workflow
+# passes the repo root as ZMK_EXTRA_MODULES when this file exists).
+build:
+  cmake: .
